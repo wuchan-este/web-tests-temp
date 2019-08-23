@@ -1,0 +1,70 @@
+<html>
+	<head>
+		<title>Messeges from the future</title>
+		<meta name="viewport" content="width=device-width;initial-scale=1">
+		<style>
+			#mainLogo{
+				color:red;
+				background-color:black;
+			}
+			.item{
+				text-align: center;
+				font-size: 16px;
+				float: left;
+				margin: 10px;
+				width: 15%;
+				height: auto;
+				background-color: white;
+				color: green;
+				font-weight: 900;
+			}
+			.mainHeader{
+				margin-top: 20px;
+				height: 50px;
+				width: 100%;
+				background-color: black;
+				color: white;
+			}
+			#messages{
+				margin-top: 5%;
+				margin-left: 2%;
+				margin-right: 2%;
+				background: rgba(0, 255, 100, 0.1);
+				height: auto;
+			}
+			body{
+				margin: 0%;
+			}
+		</style>
+
+	</head>
+	<body>
+		<div class="mainHeader">
+			<div class="item" id="mainLogo">$LOGO$</div>
+			<div class="item">First</div>
+			<div class="item">Second</div>
+			<div class="item">Other</div>
+			<div class="item">Nope</div>
+		</div>
+		<div id=messages>Waiting for messages....</div> 
+	</body>
+	<script>
+	enter();
+	
+	function enter(){
+		//-----------------1
+		var style = document.getElementsByClassName("mainHeader")[0];
+		if(window.screen.width < 640){
+			style.style.width = "640px";
+		}
+		//------------------2
+		var str = "";
+		var ptr = document.getElementById("messages");
+		for (i in window){
+			str += i + "<br>";
+		}
+		str += window.screen.height + "<br>" + window.screen.width;
+		ptr.innerHTML = str;
+	}
+	</script>
+</html>
